@@ -6,7 +6,7 @@ Plugins and Custom APIs for Dataverse that can be reused across projects. Each c
 
 Plugin behind the Custom API `gen_RenderNotificationTemplate` in solution **NotificationTemplatesAutomations**.
 
-- **Request:** `TemplateCode` (String), `RecordId` (Guid), optional `InputValues` (String, JSON object such as `{"Reason":"Late submission"}`).
+- **Request:** `TemplateCode` (String), `RecordId` (Guid), optional `InputValues_Optional` (String, JSON object such as `{"Reason":"Late submission"}`).
 - **Response:** `Subject` (String) and `Body` (String).
 - **Reads:** every read runs as the calling user. Callers need the Notification Template Renderer role or read access to the template tables.
 - **Errors:** each failure message starts with an error code such as `NotificationTemplateRequiredValueMissing` and never contains data values.

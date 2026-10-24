@@ -9,7 +9,7 @@ using System.Xml;
 namespace GeneralComponents.NotificationTemplates
 {
     /// <summary>
-    /// Reads the optional InputValues request parameter: a JSON object such as {"Reason":"Late submission"}.
+    /// Reads the optional InputValues_Optional request parameter: a JSON object such as {"Reason":"Late submission"}.
     /// Names are matched without regard to case.
     /// </summary>
     public static class CallerInputValuesParser
@@ -49,7 +49,7 @@ namespace GeneralComponents.NotificationTemplates
         private static NotificationTemplateException InputValuesInvalid(string templateCode)
         {
             return new NotificationTemplateException(NotificationTemplateErrorCodes.InputValuesInvalid, templateCode,
-                "received InputValues that aren't a JSON object of uniquely named text values, for example {\"Reason\":\"Late submission\"}.");
+                "received InputValues_Optional that isn't a JSON object of uniquely named text values, for example {\"Reason\":\"Late submission\"}.");
         }
     }
 }

@@ -6,7 +6,7 @@ namespace GeneralComponents.NotificationTemplates
 {
     /// <summary>
     /// Main operation of Custom API gen_RenderNotificationTemplate.
-    /// Inputs: TemplateCode (String), RecordId (Guid), optional InputValues (String, JSON object).
+    /// Inputs: TemplateCode (String), RecordId (Guid), optional InputValues_Optional (String, JSON object).
     /// Outputs: Subject (String), Body (String). All reads run as the calling user.
     /// </summary>
     public sealed class RenderNotificationTemplatePlugin : IPlugin
@@ -22,7 +22,7 @@ namespace GeneralComponents.NotificationTemplates
             var recordId = context.InputParameters.Contains("RecordId") && context.InputParameters["RecordId"] is Guid
                 ? (Guid)context.InputParameters["RecordId"]
                 : Guid.Empty;
-            var inputValuesJson = context.InputParameters.Contains("InputValues") ? context.InputParameters["InputValues"] as string : null;
+            var inputValuesJson = context.InputParameters.Contains("InputValues_Optional") ? context.InputParameters["InputValues_Optional"] as string : null;
 
             var renderTimer = Stopwatch.StartNew();
             try
